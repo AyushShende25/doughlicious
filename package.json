@@ -1,0 +1,28 @@
+{
+	"name": "doughlicious",
+	"version": "0.1.0",
+	"description": "pizzeria application",
+	"scripts": {
+		"build": "pnpm -r build",
+		"dev": "pnpm --parallel -r dev",
+		"lint-format": "biome check .",
+		"lint-format:fix": "biome check --write .",
+		"lint": "biome lint .",
+		"lint:fix": "biome lint --write .",
+		"format": "biome format .",
+		"format:fix": "biome format --write .",
+		"clean": "pnpm -r clean && rm -rf node_modules",
+		"prepare": "husky"
+	},
+	"license": "ISC",
+	"packageManager": "pnpm@10.5.2",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.5.1",
+		"typescript": "^5.8.3"
+	},
+	"lint-staged": {
+		"**/*.{js,ts,tsx,jsx}": ["biome check --write"]
+	}
+}
